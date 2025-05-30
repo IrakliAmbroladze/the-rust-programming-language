@@ -1,10 +1,19 @@
-//4.1 Stack-Only Data: Copy
+//4.1 Ownership and Functions
 
 fn main() {
-   let x =  5;
-   let y = x;
-   println!("x={x}, y={y}");
-//    Types such as integers that have a known size at a compile time
-//are stored entirely on the stack. So there is no need for deep copy
-//with clone
+   let s = String::from("hello");
+   println!("{}", s);
+   takes_ownership(s);
+
+   let x = 5;
+   makes_copy(x);
+
+   println!("{}", x);
+}
+
+fn takes_ownership(_some_string: String) {
+    
+}
+fn makes_copy(_some_integer: i32) {
+    
 }
