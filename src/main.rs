@@ -1,22 +1,12 @@
-//4.1 Return Values and Scope
+//4.1 Return Values and Scope: Listing 4-5: Returning ownership of parameters
 
 fn main() {
-   let s1 = gives_ownership();
-   let s2 = String::from("hello");
-   let s3 = takes_and_gives_back(s2);
-   let s4 = gives_ownership();
-   let s5 = takes_and_gives_back(s3);
-   println!("{}", s1);
-   println!("{}", s4);
-   println!("{}", s5);
+   let s1 = String::from("hello");
+   let (s2, len) = calculate_length(s1);
+   println!("The length of '{s2}' is {len}."); 
 }
 
-fn gives_ownership()->String{
-   let some_string= String::from("yours");
-   
-   some_string
-}
-
-fn takes_and_gives_back(a_string: String)->String{
-   a_string
+fn calculate_length(s: String)->(String, usize){
+   let length = s.len();
+   (s, length)
 }
