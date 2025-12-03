@@ -1,12 +1,11 @@
-//4.1 Return Values and Scope: Listing 4-5: Returning ownership of parameters
-
 fn main() {
-   let s1 = String::from("hello");
-   let (s2, len) = calculate_length(s1);
-   println!("The length of '{s2}' is {len}."); 
+    let m1 = String::from("Hello");
+    let m2 = String::from("world");
+    let (m1_again, m2_again) = greet(m1, m2);
+    let s = format!("{} {}", m1_again, m2_again);
 }
 
-fn calculate_length(s: String)->(String, usize){
-   let length = s.len();
-   (s, length)
+fn greet(g1: String, g2: String) -> (String, String) {
+    println!("{} {}!", g1, g2);
+    (g1, g2)
 }
