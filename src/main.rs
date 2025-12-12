@@ -1,5 +1,6 @@
 fn main() {
     let mut v: Vec<i32> = vec![1, 2, 3];
-    v.push(4);
-    println!("{}", v.len());
+    let num: &mut i32 = &mut v[2];
+    let num2: &i32 = &*num;
+    println!("{}{}", *num, *num2);
 }
