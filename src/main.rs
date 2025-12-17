@@ -1,6 +1,6 @@
 fn main() {
-    let v: Vec<i32> = vec![0, 1, 2];
-    let n_ref: &i32 = &v[0];
-    let n: i32 = *n_ref;
-    println!("{n}")
+    let v: Vec<String> = vec![String::from("Hello world")];
+    let s_ref: &String = &v[0];
+    let s: String = *s_ref;
+    println!("{s}")
 }
