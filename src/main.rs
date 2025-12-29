@@ -1,6 +1,13 @@
 fn main() {
-    let mut v: Vec<i32> = vec![1, 2, 3];
-    let num: &mut i32 = &mut v[2];
-    let num2: &i32 = &*num;
-    println!("{}{}", *num, *num2);
+    let s1 = String::from("hello");
+
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of '{s2}' is {len}.");
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
+
+    (s, length)
 }
