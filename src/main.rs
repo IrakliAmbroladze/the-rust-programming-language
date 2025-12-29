@@ -1,6 +1,13 @@
 fn main() {
-    let v: Vec<String> = vec![String::from("Hello world")];
-    let s_ref: &String = &v[0];
-    let s: String = *s_ref;
-    println!("{s}")
+    let s1 = String::from("hello");
+
+    let (s2, len) = calculate_length(s1);
+
+    println!("The length of '{s2}' is {len}.");
+}
+
+fn calculate_length(s: String) -> (String, usize) {
+    let length = s.len(); // len() returns the length of a String
+
+    (s, length)
 }
