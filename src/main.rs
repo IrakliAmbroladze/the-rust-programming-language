@@ -1,4 +1,4 @@
-#[derive(Debug)]
+#[derive(Debug, Copy, Clone)]
 struct Rectangle {
     width: u32,
     height: u32,
@@ -14,11 +14,15 @@ impl Rectangle {
     fn set_width(&mut self, width: u32) {
         self.width = width;
     }
-    fn max(self, other: Rectangle) -> Rectangle {
+    fn max(self, other: Self) -> Self {
         Rectangle {
             width: self.width.max(other.width),
             height: self.height.max(other.height),
         }
+    }
+    fn set_to_max(&mut self, other: Rectangle) {
+        let max = self.max(other);
+        *self = max;
     }
 }
 
