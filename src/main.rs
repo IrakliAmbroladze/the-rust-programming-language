@@ -11,6 +11,9 @@ impl Rectangle {
     fn can_hold(&self, rectangle: &Rectangle) -> bool {
         self.width > rectangle.width && self.height > rectangle.height
     }
+    fn set_width(&mut self, width: u32) {
+        self.width = width;
+    }
 }
 
 #[allow(unused_variables)]
@@ -27,6 +30,14 @@ fn main() {
         width: 60,
         height: 45,
     };
+
+    let r = &mut Box::new(Rectangle {
+        width: 1,
+        height: 2,
+    });
+    let area1 = r.area();
+    let area2 = Rectangle::area(&**r);
+    assert_eq!(area1, area2);
     println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
     println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
 }
