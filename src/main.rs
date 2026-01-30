@@ -14,30 +14,26 @@ impl Rectangle {
     fn set_width(&mut self, width: u32) {
         self.width = width;
     }
+    fn max(self, other: Rectangle) -> Rectangle {
+        Rectangle {
+            width: self.width.max(other.width),
+            height: self.height.max(other.height),
+        }
+    }
 }
 
 #[allow(unused_variables)]
 fn main() {
-    let rect1: Rectangle = Rectangle {
-        width: 30,
-        height: 50,
+    let rect = Rectangle {
+        width: 0,
+        height: 0,
     };
-    let rect2: Rectangle = Rectangle {
-        width: 10,
-        height: 40,
-    };
-    let rect3: Rectangle = Rectangle {
-        width: 60,
-        height: 45,
+    println!("{}", rect.area());
+    let other_rect = Rectangle {
+        width: 1,
+        height: 1,
     };
 
-    let r = &mut Box::new(Rectangle {
-        width: 1,
-        height: 2,
-    });
-    let area1 = r.area();
-    let area2 = Rectangle::area(&**r);
-    assert_eq!(area1, area2);
-    println!("Can rect1 hold rect2? {}", rect1.can_hold(&rect2));
-    println!("Can rect1 hold rect3? {}", rect1.can_hold(&rect3));
+    let max_rect: Rectangle = rect.max(other_rect);
+    println!("max_rect is {max_rect:#?}");
 }
