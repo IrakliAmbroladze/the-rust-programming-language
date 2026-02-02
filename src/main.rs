@@ -1,14 +1,12 @@
 fn main() {
-    enum Message {
-        Quit,
-        Move { x: i32, y: i32 },
-        Write(String),
-        ChangeColor(i32, i32, i32),
-    }
-    impl Message {
-        fn call(&self) {}
+    fn plus_one(x: Option<i32>) -> Option<i32> {
+        match x {
+            None => None,
+            Some(i) => Some(i + 1),
+        }
     }
 
-    let m = Message::Write(String::from("hello"));
-    m.call();
+    let five = Some(5);
+    let six = plus_one(five);
+    let none = plus_one(None);
 }
