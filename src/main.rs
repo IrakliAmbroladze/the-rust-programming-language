@@ -1,12 +1,8 @@
 fn main() {
-    fn plus_one(x: Option<i32>) -> Option<i32> {
-        match x {
-            None => None,
-            Some(i) => Some(i + 1),
-        }
+    let opt: Option<String> = Some(String::from("Hello world"));
+    match &opt {
+        Some(s) => println!("Some: {}", s),
+        None => println!("None!"),
     }
-
-    let five = Some(5);
-    let six = plus_one(five);
-    let none = plus_one(None);
+    println!("{:?}", opt)
 }
