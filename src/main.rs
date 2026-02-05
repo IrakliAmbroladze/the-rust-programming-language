@@ -1,12 +1,6 @@
 fn main() {
-    let mut v: Vec<i32> = vec![1, 2, 3];
-    let mut v2: Vec<&mut i32> = Vec::new();
-    for i in &mut v {
-        v2.push(i);
-    }
-    *v2[0] = 5;
-
-    let a = *v2[0];
-    let b = v[0];
-    println!("{a} {b}");
+    let mut s1 = String::from("foo");
+    let s2 = "bar";
+    s1.push_str(s2);
+    println!("s2 is {s2} and s1 is {s1}");
 }
