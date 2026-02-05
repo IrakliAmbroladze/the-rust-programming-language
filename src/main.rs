@@ -1,8 +1,6 @@
 fn main() {
-    let opt: Option<String> = Some(String::from("Hello world"));
-    match &opt {
-        Some(s) => println!("Some: {}", s),
-        None => println!("None!"),
+    let v = vec![100, 32, 57];
+    for i in &v {
+        println!("{i}");
     }
-    println!("{:?}", opt)
 }
