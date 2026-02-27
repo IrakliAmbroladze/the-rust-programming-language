@@ -34,4 +34,6 @@ fn main() {
     let store = Inventory {
         shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
     };
+    let user_pref1 = Some(ShirtColor::Red);
+    let user_pref2: Option<ShirtColor> = None;
 }
