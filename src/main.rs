@@ -1,6 +1,11 @@
-fn main() {
-    let mut s1 = String::from("foo");
-    let s2 = "bar";
-    s1.push_str(s2);
-    println!("s2 is {s2} and s1 is {s1}");
+#[derive(Debug, PartialEq, Copy, Clone)]
+enum ShirtColor {
+    Red,
+    Blue,
 }
+
+struct Inventory {
+    shirts: Vec<ShirtColor>,
+}
+
+fn main() {}
