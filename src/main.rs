@@ -30,4 +30,8 @@ impl Inventory {
     }
 }
 
-fn main() {}
+fn main() {
+    let store = Inventory {
+        shirts: vec![ShirtColor::Blue, ShirtColor::Red, ShirtColor::Blue],
+    };
+}
