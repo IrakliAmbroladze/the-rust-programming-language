@@ -7,10 +7,9 @@ fn main() {
             thread::sleep(Duration::from_millis(1));
         }
     });
+    handle.join().unwrap();
     for i in 1..5 {
         println!("Hello {i} from main");
         thread::sleep(Duration::from_millis(1));
     }
-
-    handle.join().unwrap();
 }
