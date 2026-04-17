@@ -1,10 +1,3 @@
-use std::sync::Mutex;
+use ::std::time::Duration;
 
-fn main() {
-    let m = Mutex::new(5);
-    {
-        let mut num = m.lock().unwrap();
-        *num = 6;
-    }
-    println!("m = {m:#?}");
-}
+fn main() {}
