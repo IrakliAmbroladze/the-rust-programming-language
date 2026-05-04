@@ -1,7 +1,8 @@
-fn main() {
-    let v = vec!['a', 'b', 'c'];
+fn print_coordinates(&(x, y): &(i32, i32)) {
+    println!("Current location: ({x}, {y})");
+}
 
-    for (index, value) in v.iter().enumerate() {
-        println!("{value} is at index {index}");
-    }
+fn main() {
+    let point = (3, 5);
+    print_coordinates(&point);
 }
