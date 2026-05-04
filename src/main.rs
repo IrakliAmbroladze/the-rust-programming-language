@@ -1,12 +1,7 @@
 fn main() {
-    let (tx, rx) = std::sync::mpsc::channel();
-    std::thread::spawn(move || {
-        for val in [1, 2, 3] {
-            tx.send(val).unwrap();
-        }
-    });
+    let v = vec!['a', 'b', 'c'];
 
-    while let Ok(value) = rx.recv() {
-        println!("{value}");
+    for (index, value) in v.iter().enumerate() {
+        println!("{value} is at index {index}");
     }
 }
