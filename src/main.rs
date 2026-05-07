@@ -1,9 +1,4 @@
-fn print_coordinates(&(x, y): &(i32, i32)) {
-    println!("Current location: ({x}, {y})");
-}
-
 fn main() {
-    let point = (3, 5);
-    print_coordinates(&point);
-    println!("push commit")
+    let (x, y, z) = (1, 2, 3);
+    println!("{x} {y} {z}")
 }
