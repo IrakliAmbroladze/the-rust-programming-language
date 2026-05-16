@@ -23,5 +23,8 @@ impl Human {
     }
 }
 fn main() {
-    Human.fly();
+    let person = Human;
+    Pilot::fly(&person);
+    Wizard::fly(&person);
+    person.fly();
 }
