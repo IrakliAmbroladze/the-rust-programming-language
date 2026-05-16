@@ -1,17 +1,14 @@
-trait Animal {
-    fn baby_name() -> String;
-}
-struct Dog;
-impl Dog {
-    fn baby_name() -> String {
-        String::from("Spot")
+use std::fmt;
+
+trait OutlinePrint: fmt::Display {
+    fn outline_print(&self) {
+        let output = self.to_string();
+        let len = output.len();
+        println!("{}", "*".repeat(len + 4));
+        println!("*{}*", "*".repeat(len + 2));
+        println!("* {output} *");
+        println!("*{}*", "*".repeat(len + 2));
+        println!("{}", "*".repeat(len + 4));
     }
 }
-impl Animal for Dog {
-    fn baby_name() -> String {
-        String::from("puppy")
-    }
-}
-fn main() {
-    println!("A baby dog is called a {}", <Dog as Animal>::baby_name());
-}
+fn main() {}
