@@ -1,14 +1,11 @@
-use std::fmt;
-
-struct Wrapper(Vec<String>);
-
-impl fmt::Display for Wrapper {
-    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
-        write!(f, "[{}]", self.0.join(", "))
-    }
-}
+use std::net::TcpListener;
 
 fn main() {
-    let w = Wrapper(vec![String::from("Hello"), String::from("world!")]);
-    println!("w = {w}")
+    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+
+    for stream in listener.incoming() {
+        let stream = stream.unwrap();
+
+        println!("Connection established!");
+    }
 }
