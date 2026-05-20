@@ -1,11 +1,11 @@
 use std::net::TcpListener;
-
 fn main() {
-    let listener = TcpListener::bind("127.0.0.1:7878").unwrap();
+    let listener = TcpListener::bind("127.0.0.1:7878");
+    let listener2 = TcpListener::bind("127.0.0.1:7878");
 
-    for stream in listener.incoming() {
-        let stream = stream.unwrap();
-
-        println!("Connection established!");
-    }
+    println!("{:?}", listener);
+    println!("{:?}", listener2);
+    //for stream in listener.incoming() {
+    //    println!("{:?}", stream);
+    //}
 }
