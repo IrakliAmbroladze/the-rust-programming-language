@@ -18,7 +18,8 @@ impl ThreadPool {
 
         let mut threads = Vec::with_capacity(size);
 
-        for _ in 0..size {
+        for id in 0..size {
+            threads.push(Worker::new(id));
             // create some threads and store them in the vector
         }
 
