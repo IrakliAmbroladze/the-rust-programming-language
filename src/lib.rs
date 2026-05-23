@@ -1,7 +1,7 @@
 use std::thread;
 
 pub struct ThreadPool {
-    threads: Vec<thread::JoinHandle<()>>,
+    threads: Vec<Worker>,
 }
 
 impl ThreadPool {
@@ -30,5 +30,19 @@ impl ThreadPool {
     where
         F: FnOnce() + Send + 'static,
     {
+    }
+}
+
+pub struct Worker {
+    id: usize,
+    thread: thread::JoinHandle<()>,
+}
+
+impl Worker {
+    pub fn new(id: usize) -> Worker {
+        Worker {
+            id,
+            thread: thread::spawn(|| -> () {}),
+        }
     }
 }
