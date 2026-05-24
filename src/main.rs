@@ -1,4 +1,6 @@
 fn main() {
-    let a = 10;
+    let mut a = String::from("Hello");
+    let b = &mut a;
+    b.push_str(" world");
     println!("{}", a);
 }
